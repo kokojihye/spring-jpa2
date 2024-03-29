@@ -1,0 +1,33 @@
+// 각 요청을 '###'을 통해 구분
+
+### 1. 회원 등록v1
+POST {{member_api}}/api/v1/members
+Content-Type: application/json
+
+{
+
+}
+
+### 2. 회원 등록v2
+POST {{member_api}}/api/v2/members
+Content-Type: application/json
+
+{
+  "name": "new-hello2"
+}
+
+### 3. 회원 수정v2
+PUT {{member_api}}/api/v2/members/1
+Content-Type: application/json
+
+{
+  "name": "new-hello1"
+}
+
+### 4. 회원 조회v1
+GET {{member_api}}/api/v1/members
+Content-Type: application/json
+
+### 4. 회원 조회v2
+GET {{member_api}}/api/v2/members
+Content-Type: application/json
