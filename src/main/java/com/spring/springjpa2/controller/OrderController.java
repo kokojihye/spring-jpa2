@@ -1,18 +1,7 @@
 package com.spring.springjpa2.controller;
 
-import com.spring.springjpa2.domain.Member;
-import com.spring.springjpa2.domain.Order;
-import com.spring.springjpa2.domain.item.Item;
-import com.spring.springjpa2.repository.OrderSearch;
-import com.spring.springjpa2.service.ItemService;
-import com.spring.springjpa2.service.MemberService;
-import com.spring.springjpa2.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
