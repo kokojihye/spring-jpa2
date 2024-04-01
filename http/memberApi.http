@@ -5,7 +5,7 @@ POST {{member_api}}/api/v1/members
 Content-Type: application/json
 
 {
-
+  "name": "new-name"
 }
 
 ### 2. 회원 등록v2
@@ -28,6 +28,6 @@ Content-Type: application/json
 GET {{member_api}}/api/v1/members
 Content-Type: application/json
 
-### 4. 회원 조회v2
+### 5. 회원 조회v2
 GET {{member_api}}/api/v2/members
 Content-Type: application/json

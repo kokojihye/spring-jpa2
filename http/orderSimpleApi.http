@@ -1,0 +1,15 @@
+### 1.주문 조회 v1
+GET {{order_api}}/api/v1/simple-orders
+Content-Type: application/json
+
+### 2.주문 조회 v2
+GET {{order_api}}/api/v2/simple-orders
+Content-Type: application/json
+
+### 3.주문 조회 v3
+GET {{order_api}}/api/v3/simple-orders
+Content-Type: application/json
+
+### 4.주문 조회 v4
+GET {{order_api}}/api/v4/simple-orders
+Content-Type: application/json
