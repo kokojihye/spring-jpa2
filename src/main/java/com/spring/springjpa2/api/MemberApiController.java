@@ -15,18 +15,19 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api")
 public class MemberApiController {
 
     private final MemberService memberService;
 
     // @RequestBody는 JSON으로 응답받은 값을 객체에 매핑해서 넣어줌
 
-    @GetMapping("/api/v1/members")
+    @GetMapping("/v1/members")
     public List<Member> membersV1() {
         return memberService.findMembers();
     }
 
-    @GetMapping("/api/v2/members")
+    @GetMapping("/v2/members")
     public Result membersV2() {
         List<Member> findMembers = memberService.findMembers();
         List<MemberDto> collect = findMembers.stream()
@@ -47,7 +48,7 @@ public class MemberApiController {
     static class MemberDto {
         private String name;
     }
-    @PostMapping("/api/v1/members")
+    @PostMapping("/v1/members")
     public CreateMemberResponse saveMemberV1(@RequestBody @Valid Member member) {
         Long id = memberService.join(member);
         return new CreateMemberResponse(id);
@@ -58,7 +59,7 @@ public class MemberApiController {
      * @param request : 생성할 멤버
      * @return : 생성된 멤버 Id(Long) 반환
      */
-    @PostMapping("/api/v2/members")
+    @PostMapping("/v2/members")
     public CreateMemberResponse saveMemberV2(@RequestBody @Valid CreateMemberRequest request) {
         Member member = new Member();
         member.setName(request.getName());
@@ -73,7 +74,7 @@ public class MemberApiController {
      * @param request : 수정할 Name
      * @return : 수정된 멤버 Id, Name
      */
-    @PutMapping("/api/v2/members/{id}")
+    @PutMapping("/v2/members/{id}")
     public UpdateMemberResponse updateMemberV2(
             @PathVariable("id") Long id,
             @RequestBody @Valid UpdateMemberRequest request) {
