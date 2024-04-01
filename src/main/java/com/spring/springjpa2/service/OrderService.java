@@ -5,7 +5,7 @@ import com.spring.springjpa2.domain.item.Item;
 import com.spring.springjpa2.repository.ItemRepository;
 import com.spring.springjpa2.repository.MemberRepository;
 import com.spring.springjpa2.repository.OrderRepository;
-import com.spring.springjpa2.repository.OrderSearch;
+import com.spring.springjpa2.dto.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

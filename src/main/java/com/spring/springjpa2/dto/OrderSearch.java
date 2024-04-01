@@ -1,4 +1,4 @@
-package com.spring.springjpa2.repository;
+package com.spring.springjpa2.dto;
 
 import com.spring.springjpa2.domain.OrderStatus;
 import lombok.Getter;
