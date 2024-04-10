@@ -17,6 +17,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.*;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
@@ -39,7 +41,14 @@ public class OrderApiController {
     public List<OrderDto> ordersV2() {
         return orderRepository.findAllByString(new OrderSearch()).stream()
                 .map(OrderDto::new)
-                .collect(Collectors.toList());
+                .collect(toList());
+    }
+
+    @GetMapping("/v3/orders")
+    public List<OrderDto> ordersV3() {
+        return orderRepository.findAllWithItem().stream()
+                .map(OrderDto::new)
+                .collect(toList());
     }
 
     @Data
@@ -59,7 +68,7 @@ public class OrderApiController {
             address = order.getDelivery().getAddress();
             orderItems = order.getOrderItems().stream()
                     .map(orderItem -> new OrderItemDto(orderItem))
-                    .collect(Collectors.toList());
+                    .collect(toList());
         }
     }
 
